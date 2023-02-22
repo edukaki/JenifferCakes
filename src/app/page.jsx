@@ -9,6 +9,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 export default function Home() {
   return (
     <header className="container-mobile">
+      <h1 className="pt-4 text-center">Bolos feitos com amor</h1>
       <Carousel
         className="rounded-lg py-8"
         autoPlay={true}
