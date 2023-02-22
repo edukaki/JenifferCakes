@@ -5,10 +5,11 @@ import carousel2 from '../assets/images/mobile/carousel2_head.png';
 import carousel3 from '../assets/images/mobile/carousel3_head.png';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import Button from '@/components/Button';
 
 export default function Home() {
   return (
-    <header className="container-mobile">
+    <header className="container-mobile flex flex-col items-center">
       <h1 className="pt-4 text-center">Bolos feitos com amor</h1>
       <Carousel
         className="rounded-lg py-8"
@@ -42,6 +43,7 @@ export default function Home() {
           <Image src={carousel3} alt="Fatia de bolo" />
         </div>
       </Carousel>
+      <Button alternative text="Ver cardápio" href="/cardapio" />
     </header>
   );
 }
