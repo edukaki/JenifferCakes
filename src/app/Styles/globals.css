@@ -6,4 +6,13 @@
   html {
     @apply font-montserrat bg-light-beige;
   }
+  h1 {
+    @apply font-dancing-script text-dark-grey text-4xl;
+  }
+}
+
+@layer components {
+  .container-mobile {
+    @apply px-4;
+  }
 }
