@@ -4,10 +4,10 @@
 
 @layer base {
   html {
-    @apply font-montserrat bg-light-beige;
+    @apply font-montserrat bg-light-beige text-dark-grey;
   }
   h1 {
-    @apply font-dancing-script text-dark-grey text-4xl;
+    @apply font-dancing-script text-4xl;
   }
 }
 
