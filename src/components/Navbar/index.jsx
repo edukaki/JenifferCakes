@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import logo from '../../assets/images/icons/Jennifer-logo.png';
-import hamburguer from '../../assets/images/icons/menu-hamburger.png';
+
 export default function Navbar() {
   const [menuHamburguer, setMenuHamburguer] = useState(false);
   return (
@@ -25,7 +25,7 @@ export default function Navbar() {
         </li>
       </ul>
       <button onClick={() => setMenuHamburguer(!menuHamburguer)}>
-        <Image src={hamburguer} alt="menu" />
+        <i className="fa-solid fa-bars"></i>
       </button>
     </nav>
   );
