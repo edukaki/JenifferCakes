@@ -1,14 +1,14 @@
 'use client';
 import Image from 'next/image';
-import carousel1 from '@/assets/images/mobile/carousel1_head.png';
-import carousel2 from '@/assets/images/mobile/carousel2_head.png';
-import carousel3 from '@/assets/images/mobile/carousel3_head.png';
+import carousel1 from '@/assets/images/home/mobile/carousel1_head.png';
+import carousel2 from '@/assets/images/home/mobile/carousel2_head.png';
+import carousel3 from '@/assets/images/home/mobile/carousel3_head.png';
 import Button from '@/components/Button';
-import profile from '@/assets/images/mobile/jeniffer-profile.png';
+import profile from '@/assets/images/home/mobile/jeniffer-profile.png';
 import Carousel from '@/components/Carousel';
 import CardMain from '@/components/CardMain';
-import artisan from '@/assets/images/mobile/artisan.png';
-import quality from '@/assets/images/mobile/quality.png';
+import artisan from '@/assets/images/home/mobile/artisan.png';
+import quality from '@/assets/images/home/mobile/quality.png';
 
 export default function Home() {
   return (
