@@ -21,6 +21,6 @@ export default function Button(props) {
 Button.propTypes = {
   margin: PropTypes.string,
   alternative: PropTypes.bool,
-  text: PropTypes.string,
-  href: PropTypes.string,
+  text: PropTypes.string.isRequired,
+  href: PropTypes.string.isRequired,
 };

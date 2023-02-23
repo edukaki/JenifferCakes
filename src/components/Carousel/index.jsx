@@ -37,6 +37,6 @@ export default function Carousel(props) {
 }
 
 Carousel.propTypes = {
-  arrImage: PropTypes.array,
+  arrImage: PropTypes.array.isRequired,
   alt: PropTypes.string,
 };
