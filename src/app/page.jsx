@@ -10,6 +10,7 @@ import ColoredTitle from '@/components/ColoredTitle';
 import Quotes from '@/components/Quotes';
 import { objTestimonials } from '@/assets/utils/objTestmonials';
 import { objMainCarousel } from '@/assets/utils/objMainCarousel';
+import callToAction from '@/assets/images/home/mobile/call-to-action-price.png';
 
 export default function Home() {
   return (
@@ -73,6 +74,10 @@ export default function Home() {
         <section className="flex flex-col justify-evenly gap-7 min-h-screen">
           <ColoredTitle bgColor="pink" title="O sabor que todos Amam" />
           <Carousel alt="testemunha" arrImage={objTestimonials} />
+        </section>
+        <section className="flex flex-col justify-evenly gap-7 min-h-screen">
+          <ColoredTitle bgColor="green" title="Saboreie a Felicidade" />
+          <Image src={callToAction} alto="imagem de bolo com oferta" />
         </section>
       </main>
     </>
