@@ -2,7 +2,7 @@ import testimonial1 from '@/assets/images/testimonials/testimonial1.png';
 import testimonial2 from '@/assets/images/testimonials/testimonial2.png';
 import testimonial3 from '@/assets/images/testimonials/testimonial3.png';
 
-export const testimonials = [
+export const objTestimonials = [
   {
     img: testimonial1,
     name: 'Luana',
