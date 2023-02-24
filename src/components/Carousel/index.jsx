@@ -7,7 +7,7 @@ import Quotes from '../Quotes';
 export default function Carousel(props) {
   return (
     <ImgViewer
-      className="rounded-lg py-9"
+      className="rounded-lg pt-9 pb-4"
       autoPlay={true}
       showThumbs={false}
       emulateTouch={true}
@@ -29,7 +29,7 @@ export default function Carousel(props) {
       }}
     >
       {props.arrImage.map((obj, index) => (
-        <div key={index} className="flex flex-col items-center">
+        <div key={index} className="flex flex-col items-center pb-12">
           <Image
             className={`${obj.name && 'rounded-full max-w-[190px]'}`}
             src={obj.img}
