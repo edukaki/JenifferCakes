@@ -71,13 +71,14 @@ export default function Home() {
           text="Somente ingredientes frescos e de qualidade fazem parte da nossa receita"
           left
         />
-        <section className="flex flex-col justify-evenly gap-7 min-h-screen">
+        <section className="flex flex-col gap-7">
           <ColoredTitle bgColor="pink" title="O sabor que todos Amam" />
           <Carousel alt="testemunha" arrImage={objTestimonials} />
         </section>
-        <section className="flex flex-col justify-evenly gap-7 min-h-screen">
+        <section className="flex flex-col items-center gap-12">
           <ColoredTitle bgColor="green" title="Saboreie a Felicidade" />
           <Image src={callToAction} alto="imagem de bolo com oferta" />
+          <Button text="Encomendar" href="/cardapio" whatsapp />
         </section>
       </main>
     </>
