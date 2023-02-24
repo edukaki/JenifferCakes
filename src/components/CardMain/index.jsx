@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function CardMain(props) {
   return (
-    <section className="flex flex-col justify-center h-screen text-center relative">
+    <section className="flex flex-col justify-center min-h-screen text-center relative">
       <div className="absolute grid grid-cols-2 h-full w-full -z-50">
         <div
           className={`${
@@ -17,7 +17,7 @@ export default function CardMain(props) {
           }`}
         ></div>
       </div>
-      <h2 className="pb-11">{props.title}</h2>
+      <h2 className="pt-4 pb-11">{props.title}</h2>
       <Image className="w-full" src={props.src} alt={props.alt} />
       <div className="flex flex-col items-center p-5 mt-16 mb-10 bg-light-beige">
         <h3 className="tracking-wider">{props.subtitle}</h3>

@@ -9,6 +9,7 @@ import Carousel from '@/components/Carousel';
 import CardMain from '@/components/CardMain';
 import artisan from '@/assets/images/home/mobile/artisan.png';
 import quality from '@/assets/images/home/mobile/quality.png';
+import ColoredTitle from '@/components/ColoredTitle';
 
 export default function Home() {
   return (
@@ -29,7 +30,7 @@ export default function Home() {
         </div>
       </header>
       <main className="flex flex-col gap-24">
-        <section className="flex flex-col items-center text-center gap-7 h-screen">
+        <section className="flex flex-col items-center text-center gap-7 min-h-screen">
           <h1 className="text-center w-9/12 tracking-wider leading-snug">
             Oi, eu sou a Jennifer !
           </h1>
