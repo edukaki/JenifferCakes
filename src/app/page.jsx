@@ -11,6 +11,7 @@ import Quotes from '@/components/Quotes';
 import { objTestimonials } from '@/assets/utils/objTestmonials';
 import { objMainCarousel } from '@/assets/utils/objMainCarousel';
 import callToAction from '@/assets/images/home/mobile/call-to-action-price.png';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
@@ -81,6 +82,9 @@ export default function Home() {
           <Button text="Encomendar" href="/cardapio" whatsapp />
         </section>
       </main>
+      <footer>
+        <Footer/>
+      </footer>
     </>
   );
 }
