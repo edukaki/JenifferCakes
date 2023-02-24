@@ -1,8 +1,5 @@
 'use client';
 import Image from 'next/image';
-import carousel1 from '@/assets/images/home/mobile/carousel1_head.png';
-import carousel2 from '@/assets/images/home/mobile/carousel2_head.png';
-import carousel3 from '@/assets/images/home/mobile/carousel3_head.png';
 import Button from '@/components/Button';
 import profile from '@/assets/images/home/mobile/jeniffer-profile.png';
 import Carousel from '@/components/Carousel';
@@ -10,6 +7,9 @@ import CardMain from '@/components/CardMain';
 import artisan from '@/assets/images/home/mobile/artisan.png';
 import quality from '@/assets/images/home/mobile/quality.png';
 import ColoredTitle from '@/components/ColoredTitle';
+import Quotes from '@/components/Quotes';
+import { objTestimonials } from '@/assets/utils/objTestmonials';
+import { objMainCarousel } from '@/assets/utils/objMainCarousel';
 
 export default function Home() {
   return (
@@ -17,10 +17,7 @@ export default function Home() {
       <header className="h-[calc(100vh-100px)] flex flex-row items-center">
         <div className="flex flex-col items-center">
           <h1 className="text-center">Bolos feitos com amor</h1>
-          <Carousel
-            arrImage={[carousel1, carousel2, carousel3]}
-            alt="Fatia de bolo"
-          />
+          <Carousel arrImage={objMainCarousel} alt="Fatia de bolo" />
           <Button
             alternative
             text="Ver cardápio"
@@ -39,17 +36,13 @@ export default function Home() {
             src={profile}
             alt="Jeniffer segurando bolo"
           />
-          <div className="flex flex-col text-xl w-11/12">
-            <span className="text-7xl -mb-9 text-left w-full">“</span>
-            <p className="px-4 pb-8">
-              Trabalho com confeitaria profissional há mais de 2 anos.
-            </p>
-            <p className="px-4">
-              O que me dá mais satisfação é ver a alegria no rosto dos meus
-              clientes.
-            </p>
-            <span className="text-7xl -mb-10 text-right w-full">”</span>
-            <div className="grid grid-cols-2 py-2 my-6 text-center bg-white text-red-strong">
+          <div className="flex flex-col items-center">
+            <Quotes
+              firstParagraph="Trabalho com confeitaria profissional há mais de 2 anos."
+              secondParagraph="O que me dá mais satisfação é ver a alegria no rosto dos meus
+              clientes."
+            />
+            <div className="grid grid-cols-2 py-2 my-6 text-xl w-11/12 text-center bg-white text-red-strong">
               <span className="text-2xl p-4 font-semibold">
                 1000 + bolos entregues
               </span>
@@ -77,6 +70,10 @@ export default function Home() {
           text="Somente ingredientes frescos e de qualidade fazem parte da nossa receita"
           left
         />
+        <section className="flex flex-col justify-evenly gap-7 min-h-screen">
+          <ColoredTitle bgColor="pink" title="O sabor que todos Amam" />
+          <Carousel alt="testemunha" arrImage={objTestimonials} />
+        </section>
       </main>
     </>
   );
