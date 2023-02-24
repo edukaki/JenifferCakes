@@ -25,7 +25,7 @@ export default function Navbar() {
         </li>
       </ul>
       <button onClick={() => setMenuHamburguer(!menuHamburguer)}>
-        <i className="fa-solid fa-bars"></i>
+        <i className="fa-solid fa-bars fa-2xl"></i>
       </button>
     </nav>
   );
