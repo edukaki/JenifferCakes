@@ -16,7 +16,7 @@
     @apply text-lg font-semibold;
   }
   main {
-    @apply container-mobile;
+    @apply container-mobile pb-24;
   }
 }
 
