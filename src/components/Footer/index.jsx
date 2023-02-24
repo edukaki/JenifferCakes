@@ -4,39 +4,34 @@ import facebook from '@/assets/images/icons/facebook-icon.svg';
 import whatsapp from '@/assets/images/icons/whatsapp-icon.svg';
 
 export default function Footer() {
-    return (
-        <div className='text-center mx-4'>
-            <div className="bg-white">
-                <h2 className="pt-5 font-montserrat text-base font-semibold">Entre em contato</h2>
-                    <ul className="flex flex-row justify-center pt-5 pb-8">
-                        <li>
-                            <a href="https://instagram.com/jeniffer_santos_cassajus?igshid=YmMyMTA2M2Y=">
-                                <Image
-                                src={instagram}
-                                alt="Instagram logo"
-                                />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/jeniffersantos.santos.75?mibextid=LQQJ4d">
-                                <Image
-                                className="mx-6"
-                                src={facebook}
-                                alt="Facebook logo"
-                                />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://api.whatsapp.com/send?phone=5518996394369">
-                                <Image
-                                src={whatsapp}
-                                alt="WhatsApp logo"
-                                />
-                            </a>
-                        </li>
-                    </ul>
-            </div>
-            <p className="text-xs py-5"><i className="fa-regular fa-copyright"></i> Jennifer Cakes. Todos os direitos reservados. </p>
-        </div>
-    );
+  return (
+    <footer className="text-center mx-4">
+      <div className="bg-white">
+        <h2 className="pt-5 font-montserrat text-base font-semibold">
+          Entre em contato
+        </h2>
+        <ul className="flex flex-row justify-center pt-5 pb-8">
+          <li>
+            <a href="https://instagram.com/jeniffer_santos_cassajus?igshid=YmMyMTA2M2Y=">
+              <Image src={instagram} alt="Instagram logo" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/jeniffersantos.santos.75?mibextid=LQQJ4d">
+              <Image className="mx-6" src={facebook} alt="Facebook logo" />
+            </a>
+          </li>
+          <li>
+            <a href="https://api.whatsapp.com/send?phone=5518996394369">
+              <Image src={whatsapp} alt="WhatsApp logo" />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <p className="text-xs py-5">
+        <i className="fa-regular fa-copyright"></i> Jennifer Cakes. Todos os
+        direitos reservados.{' '}
+      </p>
+    </footer>
+  );
 }
