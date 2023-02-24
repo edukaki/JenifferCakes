@@ -2,6 +2,7 @@ import { Carousel as ImgViewer } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import PropTypes from 'prop-types';
 import Image from 'next/image';
+import Quotes from '../Quotes';
 
 export default function Carousel(props) {
   return (
@@ -27,9 +28,21 @@ export default function Carousel(props) {
         );
       }}
     >
-      {props.arrImage.map((img, index) => (
-        <div key={index}>
-          <Image src={img} alt={props.alt} />
+      {props.arrImage.map((obj, index) => (
+        <div key={index} className="flex flex-col items-center">
+          <Image
+            className={`${obj.name && 'rounded-full max-w-[190px]'}`}
+            src={obj.img}
+            alt={props.alt}
+          />
+          {obj.name && (
+            <>
+              <span className="text-2xl font-semibold pb-10 pt-5">
+                {obj.name}
+              </span>
+              <Quotes firstParagraph={obj.quote} />
+            </>
+          )}
         </div>
       ))}
     </ImgViewer>
