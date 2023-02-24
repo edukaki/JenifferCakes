@@ -17,6 +17,7 @@ module.exports = {
       colors: {
         'candy-pink': '#FFAAA5',
         'candy-green': '#A8E6CF',
+        'green-strong': '#29A71A',
         'light-beige': '#F8F5F1',
         'red-strong': '#E23B48',
         'dark-grey': '#423F3F',
