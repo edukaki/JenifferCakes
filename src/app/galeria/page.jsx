@@ -16,6 +16,9 @@ export default function galeria() {
         <section className="flex flex-col items-center text-center gap-7">
           <ColoredTitle bgColor="green" title="Aniversário Infantil" />
           <Carousel arrImage={objGallery[0].infantil} alt="Bolo infantil" />
+          <Link href="/galeria/infantil" className=" text-lg -mt-10 underline">
+            ver mais
+          </Link>
         </section>
         <section className="flex flex-col items-center text-center gap-7">
           <ColoredTitle bgColor="green" title="Aniversário e Celebrações" />
