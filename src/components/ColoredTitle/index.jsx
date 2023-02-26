@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 export default function ColoredTitle(props) {
   return (
     <div
-      className={`px-10 py-8 w-full text-center ${
+      className={`${
+        props.calligraphy ? 'px-10 py-8' : 'px-8 py-4'
+      } w-full text-center ${
         props.bgColor === 'green'
           ? 'bg-candy-green'
           : props.bgColor === 'pink'
@@ -11,7 +13,7 @@ export default function ColoredTitle(props) {
           : ''
       }`}
     >
-      <h2>{props.title}</h2>
+      {props.calligraphy ? <h2>{props.title}</h2> : <h3>{props.title}</h3>}
     </div>
   );
 }
@@ -19,4 +21,5 @@ export default function ColoredTitle(props) {
 ColoredTitle.propTypes = {
   title: PropTypes.string.isRequired,
   bgColor: PropTypes.string.isRequired,
+  calligraphy: PropTypes.bool,
 };
