@@ -1,9 +1,12 @@
-import Link from 'next/link';
+// import Link from 'next/link';
 import PropTypes from 'prop-types';
 export default function Button(props) {
   return (
-    <Link
-      href={props.href}
+    <button
+      type={props.type ? props.type : 'button'}
+      onClick={() => {
+        props.type !== 'submit' && (window.location = props.href);
+      }}
       className={`flex flex-row gap-2 items-center py-3 px-8 shadow-lg ${
         props.margin ? props.margin : 'm-auto'
       } ${
@@ -13,8 +16,8 @@ export default function Button(props) {
       } ${!props.alternative && 'text-white font-semibold text-xl'}}`}
     >
       {props.text}
-      {props.whatsapp && <i class="fa-brands fa-whatsapp fa-lg"></i>}
-    </Link>
+      {props.whatsapp && <i className="fa-brands fa-whatsapp fa-lg"></i>}
+    </button>
   );
 }
 
@@ -22,6 +25,6 @@ Button.propTypes = {
   margin: PropTypes.string,
   alternative: PropTypes.bool,
   text: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
+  href: PropTypes.string,
   whatsapp: PropTypes.bool,
 };
