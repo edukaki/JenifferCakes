@@ -8,7 +8,7 @@ export default function Button(props) {
         props.margin ? props.margin : 'm-auto'
       } ${
         props.alternative
-          ? 'bg-candy-green hover:bg-white hover:border-candy-green hover:border'
+          ? 'bg-salmon hover:bg-white hover:border-sabg-salmon hover:border'
           : 'bg-green-strong hover:opacity-70'
       } ${!props.alternative && 'text-white font-semibold text-xl'}}`}
     >
