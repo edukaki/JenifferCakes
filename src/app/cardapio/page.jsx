@@ -1,3 +1,5 @@
+import FOrder from '@/components/Form/FOrder';
+
 export default function cardapio() {
   return (
     <>
@@ -6,6 +8,9 @@ export default function cardapio() {
           Cardápio
         </h1>
       </header>
+      <main>
+        <FOrder />
+      </main>
     </>
   );
 }
