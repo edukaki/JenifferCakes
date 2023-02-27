@@ -18,10 +18,34 @@
   main {
     @apply flex flex-col gap-24 container-mobile pb-24;
   }
+  label {
+    @apply space-y-5;
+  }
+  input[type='date'] {
+    @apply w-full py-2 px-2 text-dark-grey text-opacity-70 tracking-widest;
+  }
+  input[type='date']::placeholder {
+    @apply text-red-400 opacity-40;
+  }
 }
 
 @layer components {
   .container-mobile {
     @apply px-4;
+  }
+  .radioButton {
+    @apply relative w-10/12 h-10 bg-white;
+  }
+  .radioButton div,
+  .radioButton input[type='radio'] {
+    @apply absolute top-0 left-0 right-0 bottom-0;
+  }
+
+  .radioButton input[type='radio'] {
+    @apply opacity-0 z-50 cursor-pointer;
+  }
+
+  .radioButton div {
+    @apply cursor-pointer z-40;
   }
 }
