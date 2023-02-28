@@ -6,7 +6,9 @@ export default function OrderPanel(props) {
         Meu Bolo
       </h3>
       <div className="flex flex-row justify-between p-2 font-semibold">
-        <span>Bolo</span>
+        <span>
+          {(order.tamanho.name && `1 ${order.tamanho.name}`) || 'Bolo'}
+        </span>
         <span>R$ {order.tamanho.preco || '00'},00</span>
       </div>
       <div className="flex flex-col p-2">
