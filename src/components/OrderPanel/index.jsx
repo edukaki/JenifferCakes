@@ -21,11 +21,19 @@ export default function OrderPanel(props) {
             </span>
           ))}
       </div>
-      <div className="flex flex-row justify-between p-2 font-semibold">
-        <span>Acréscimos</span>
-        <span>
-          R$ {order.acrescimos.length * order.tamanho.acrescimos || '00'},00
-        </span>
+      <div className="flex flex-col p-2">
+        <div className="flex flex-row justify-between font-semibold">
+          <span>Acrescimos</span>
+          <span>
+            R$ {order.acrescimos.length * order.tamanho.acrescimos || '00'},00
+          </span>
+        </div>
+        {order.acrescimos &&
+          order.acrescimos.map((acrescimo, index) => (
+            <span className="text-sm" key={index}>
+              {acrescimo !== 0 ? acrescimo : ''}
+            </span>
+          ))}
       </div>
       <div className="flex flex-row justify-between p-2 font-semibold">
         <span>Topper</span>
