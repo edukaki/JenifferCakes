@@ -68,7 +68,7 @@ export const FOrder = () => {
   const [order, setOrder] = useState({
     tamanho: 0,
     recheios: [],
-    acrescimos: 0,
+    acrescimos: [],
     topper: false,
     total: 0,
   });
@@ -87,8 +87,7 @@ export const FOrder = () => {
         }}
         validationSchema={OrderSchema}
         onSubmit={(values) => {
-          // same shape as initial values
-          console.log(JSON.stringify(values).replace('', '%20'));
+          console.log(JSON.stringify(values).replace(' ', '%20'));
         }}
       >
         {({ errors, touched }) => (
