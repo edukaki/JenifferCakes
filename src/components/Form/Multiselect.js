@@ -34,7 +34,10 @@ const MultiSelect = ({
         value={
           options ? options.find((option) => option.value === field.value) : ''
         }
-        onChange={(option) => form.setFieldValue(field.name, option.value)}
+        onChange={(option) => {
+          form.setFieldValue(field.name, option.value);
+          handleChange(field.name, option.value);
+        }}
         onBlur={field.onBlur}
         placeholder={placeholder}
       />
