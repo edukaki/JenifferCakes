@@ -9,6 +9,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import checkedIcon from '@/assets/images/icons/checked-icon.svg';
 import alertIcon from '@/assets/images/icons/alert-icon.svg';
+import OrderPanel from '@/components/OrderPanel';
 
 const arrBolos = [
   { name: 'Mini', preco: 65, serves: 10, acrescimos: 10, topper: 10 },
@@ -66,8 +67,9 @@ export const FOrder = () => {
   const [sizeRef, setSizeRef] = useState(0);
   const [order, setOrder] = useState({
     tamanho: 0,
-    recheios: '',
+    recheios: [],
     acrescimos: 0,
+    topper: false,
     total: 0,
   });
   return (
@@ -247,6 +249,7 @@ export const FOrder = () => {
                 <div>{errors.entrega}</div>
               ) : null}
             </label>
+            <OrderPanel order={order} />
             {/* // ! SUBMIT */}
             <Button type="submit" text="Encomendar" whatsapp />
           </Form>
