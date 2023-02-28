@@ -13,6 +13,7 @@ const MultiSelect = ({
       field.name,
       option ? option.map((item) => item.value) : [],
     );
+    handleChange(field.name, option ? option.map((item) => item.value) : []);
   }
 
   const getValue = () => {
@@ -26,7 +27,6 @@ const MultiSelect = ({
   };
 
   if (!isMulti) {
-    handleChange && handleChange(field.name, getValue());
     return (
       <Select
         options={options}
@@ -40,7 +40,6 @@ const MultiSelect = ({
       />
     );
   } else {
-    handleChange && handleChange(field.name, getValue());
     return (
       <Select
         className="react-select-container"
