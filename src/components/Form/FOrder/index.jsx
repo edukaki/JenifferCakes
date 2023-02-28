@@ -1,7 +1,7 @@
 'use client';
 import Button from '@/components/Button';
 import ColoredTitle from '@/components/ColoredTitle';
-import { Formik, Form, Field, FieldArray } from 'formik';
+import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import MultiSelect from '../Multiselect';
 import cartIcon from '@/assets/images/icons/carticon.svg';
@@ -10,7 +10,7 @@ import { useState } from 'react';
 import checkedIcon from '@/assets/images/icons/checked-icon.svg';
 import alertIcon from '@/assets/images/icons/alert-icon.svg';
 
-const bolo = [
+const arrBolos = [
   { name: 'Mini', preco: 65, serves: 10, acrescimos: 10, topper: 10 },
   { name: 'Pequeno', preco: 85, serves: 20, acrescimos: 15, topper: 15 },
   { name: 'Médio', preco: 120, serves: 30, acrescimos: 20, topper: 15 },
@@ -59,16 +59,17 @@ const OrderSchema = Yup.object().shape({
 
 export const FOrder = () => {
   function handleFieldValue(name, value) {
-    console.log(name, value);
+    setOrder(
+      (currentOrder) => (currentOrder = { ...currentOrder, [name]: value }),
+    );
   }
   const [sizeRef, setSizeRef] = useState(0);
   const [order, setOrder] = useState({
-    tamanho: sizeRef.preco || 0,
+    tamanho: 0,
     recheios: '',
     acrescimos: 0,
     total: 0,
   });
-  console.log(order.total);
   return (
     <div>
       <h3 className="text-center font-medium tracking-widest">
@@ -90,10 +91,11 @@ export const FOrder = () => {
       >
         {({ errors, touched }) => (
           <Form className="flex flex-col gap-8 mt-4">
+            {/* // ! TAMANHO */}
             <label>
               <ColoredTitle bgColor="green" title="Tamanho" />
               <div className="flex flex-col gap-12">
-                {bolo.map((size, index) => (
+                {arrBolos.map((size, index) => (
                   <div className="flex flex-col items-center gap-2" key={index}>
                     <div className="w-10/12 text-center p-2 space-y-4 bg-white">
                       <span className="text-lg text-candy-pink font-semibold">
@@ -108,6 +110,13 @@ export const FOrder = () => {
                         value={size.name}
                         onClick={() => {
                           setSizeRef(size);
+                          setOrder(
+                            (currentOrder) =>
+                              (currentOrder = {
+                                ...currentOrder,
+                                tamanho: size,
+                              }),
+                          );
                         }}
                       />
                       <div
@@ -152,6 +161,7 @@ export const FOrder = () => {
                 <div>{errors.tamanho}</div>
               ) : null}
             </label>
+            {/* // ! RECHEIOS */}
             <label>
               <ColoredTitle bgColor="green" title="Até 2 Recheios" />
               <Field
@@ -166,10 +176,11 @@ export const FOrder = () => {
                 <div>{errors.recheios}</div>
               ) : null}
             </label>
+            {/* // ! ACRESCIMOS */}
             <label>
               <ColoredTitle bgColor="green" title="Acréscimos" />
               <div className="grid grid-cols-1 bg-candy-green py-2 px-4 font-semibold">
-                {bolo.map((size, index) => (
+                {arrBolos.map((size, index) => (
                   <div className="flex flex-row justify-between" key={index}>
                     <span>{size.name}</span>
                     <span>{`R$ ${size.acrescimos},00`}</span>
@@ -189,10 +200,11 @@ export const FOrder = () => {
                 <div>{errors.acrescimos}</div>
               ) : null}
             </label>
+            {/* // ! TOPPER */}
             <label>
               <ColoredTitle bgColor="green" title="Topper" />
               <div className="grid grid-cols-1 bg-candy-green py-2 px-4 font-semibold">
-                {bolo.map((size, index) => (
+                {arrBolos.map((size, index) => (
                   <div className="flex flex-row justify-between" key={index}>
                     <span>{size.name}</span>
                     <span>{`R$ ${size.topper},00`}</span>
@@ -215,6 +227,7 @@ export const FOrder = () => {
                 <div>{errors.topper}</div>
               ) : null}
             </label>
+            {/* // ! ENTREGA */}
             <label>
               <ColoredTitle bgColor="green" title="Data de Entrega" />
               <div>
@@ -234,6 +247,7 @@ export const FOrder = () => {
                 <div>{errors.entrega}</div>
               ) : null}
             </label>
+            {/* // ! SUBMIT */}
             <Button type="submit" text="Encomendar" whatsapp />
           </Form>
         )}
