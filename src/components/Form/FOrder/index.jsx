@@ -237,9 +237,8 @@ export const FOrder = () => {
                   <Image
                     src={alertIcon}
                     alt="alert icon"
-                    width={15}
                     height={15}
-                    className="mr-2"
+                    className="mr-2 w-auto"
                   />
                   Encomende com no MÍNIMO 2 dias de antecedência
                 </span>
