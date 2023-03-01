@@ -40,6 +40,7 @@ const MultiSelect = ({
         }}
         onBlur={field.onBlur}
         placeholder={placeholder}
+        instanceId={field.name}
       />
     );
   } else {
