@@ -15,13 +15,19 @@ export default function Navbar() {
         } absolute top-full right-0 space-y-8 py-10 w-full bg-white text-center`}
       >
         <li>
-          <Link href="/">Home</Link>
+          <Link href="/" onClick={() => setMenuHamburguer(false)}>
+            Home
+          </Link>
         </li>
         <li>
-          <Link href="/galeria">Galeria</Link>
+          <Link href="/galeria" onClick={() => setMenuHamburguer(false)}>
+            Galeria
+          </Link>
         </li>
         <li>
-          <Link href="/cardapio">Cardápio</Link>
+          <Link href="/cardapio" onClick={() => setMenuHamburguer(false)}>
+            Cardápio
+          </Link>
         </li>
       </ul>
       <button onClick={() => setMenuHamburguer(!menuHamburguer)}>
