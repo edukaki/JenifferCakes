@@ -2,7 +2,7 @@
 import { objGallery } from '@/assets/utils/objGallery';
 import Carousel from '@/components/Carousel';
 import ColoredTitle from '@/components/ColoredTitle';
-import Link from 'next/link';
+// import Link from 'next/link';
 
 export default function galeria() {
   return (
@@ -16,9 +16,9 @@ export default function galeria() {
         <section className="flex flex-col items-center text-center gap-7">
           <ColoredTitle bgColor="green" title="Aniversário Infantil" />
           <Carousel arrImage={objGallery[0].infantil} alt="Bolo infantil" />
-          <Link href="/galeria/infantil" className=" text-lg -mt-10 underline">
+          {/* <Link href="/galeria/infantil" className=" text-lg -mt-10 underline">
             ver mais
-          </Link>
+          </Link> */}
         </section>
         <section className="flex flex-col items-center text-center gap-7">
           <ColoredTitle bgColor="green" title="Aniversário e Celebrações" />
