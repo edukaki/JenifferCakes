@@ -87,7 +87,22 @@ export const FOrder = () => {
         }}
         validationSchema={OrderSchema}
         onSubmit={(values) => {
-          console.log(JSON.stringify(values).replace(' ', '%20'));
+          const total =
+            sizeRef.preco +
+            values.acrescimos.length * sizeRef.acrescimos +
+            (values.topper && sizeRef.topper);
+          const newOrder = JSON.stringify(values)
+            .replaceAll(',"', '%0a')
+            .replaceAll(/[{}"\[\]]/g, '')
+            .replaceAll(':', ': ')
+            .replace(true, 'Sim')
+            .replace(false, 'Não')
+            .replaceAll(' ', ' %20');
+          window.location.replace(
+            `https://api.whatsapp.com/send?phone=819082453134&text=${
+              newOrder + `%0aTotal:%20R$${total},00`
+            }`,
+          );
         }}
       >
         {({ errors, touched }) => (
