@@ -7,10 +7,7 @@ import logo from '../../assets/images/icons/Jennifer-logo.png';
 export default function Navbar() {
   const [menuHamburguer, setMenuHamburguer] = useState(false);
   return (
-    <nav
-      className="relative flex flex-row items-center justify-between p-4 bg-white z-50"
-      onBlur={() => setMenuHamburguer(false)}
-    >
+    <nav className="relative flex flex-row items-center justify-between p-4 bg-white z-50">
       <Image src={logo} alt="logo" />
       <ul
         className={`${
