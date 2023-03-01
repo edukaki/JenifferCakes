@@ -108,75 +108,81 @@ export const FOrder = () => {
         {({ errors, touched }) => (
           <Form className="flex flex-col gap-8 mt-4">
             {/* // ! TAMANHO */}
-            <label>
+            <div id="tamanho-radio-group">
               <ColoredTitle bgColor="green" title="Tamanho" />
-              <div className="flex flex-col gap-12">
+              <div
+                role="group"
+                aria-labelledby="tamanho-radio-group"
+                className="flex flex-col gap-12 mt-5"
+              >
                 {arrBolos.map((size, index) => (
-                  <div className="flex flex-col items-center gap-2" key={index}>
-                    <div className="w-10/12 text-center p-2 space-y-4 bg-white">
-                      <span className="text-lg text-candy-pink font-semibold">
-                        {size.name}
-                      </span>
-                      <p>{`Serve até ${size.serves} pessoas`}</p>
-                    </div>
-                    <div className="radioButton">
-                      <Field
-                        name="tamanho"
-                        type="radio"
-                        value={size.name}
-                        onClick={() => {
-                          setSizeRef(size);
-                          setOrder(
-                            (currentOrder) =>
-                              (currentOrder = {
-                                ...currentOrder,
-                                tamanho: size,
-                              }),
-                          );
-                        }}
-                      />
-                      <div
-                        className={`flex flex-row justify-between w-full ${
-                          sizeRef.name !== size.name
-                            ? 'pr-5 pl-11'
-                            : 'bg-candy-green'
-                        }`}
-                      >
-                        {sizeRef.name === size.name ? (
-                          <>
-                            <span className="self-center font-semibold text-center w-full">
-                              ADICIONADO
-                            </span>
-                            <Image
-                              src={checkedIcon}
-                              alt="checked icon"
-                              width={25}
-                              height={25}
-                              className="absolute right-0 top-0 bottom-0 my-auto mr-5
+                  <label key={index}>
+                    <div className="flex flex-col items-center gap-2">
+                      <div className="w-10/12 text-center p-2 space-y-4 bg-white">
+                        <span className="text-lg text-candy-pink font-semibold">
+                          {size.name}
+                        </span>
+                        <p>{`Serve até ${size.serves} pessoas`}</p>
+                      </div>
+                      <div className="radioButton">
+                        <Field
+                          name="tamanho"
+                          type="radio"
+                          value={size.name}
+                          onClick={() => {
+                            setSizeRef(size);
+                            setOrder(
+                              (currentOrder) =>
+                                (currentOrder = {
+                                  ...currentOrder,
+                                  tamanho: size,
+                                }),
+                            );
+                          }}
+                        />
+                        <div
+                          className={`flex flex-row justify-between w-full ${
+                            sizeRef.name !== size.name
+                              ? 'pr-5 pl-11'
+                              : 'bg-candy-green'
+                          }`}
+                        >
+                          {sizeRef.name === size.name ? (
+                            <>
+                              <span className="self-center font-semibold text-center w-full">
+                                ADICIONADO
+                              </span>
+                              <Image
+                                src={checkedIcon}
+                                alt="checked icon"
+                                width={25}
+                                height={25}
+                                className="absolute right-0 top-0 bottom-0 my-auto mr-5
                               "
-                            />
-                          </>
-                        ) : (
-                          <>
-                            <span className="self-center font-semibold">{`R$ ${size.preco},00`}</span>
-                            <Image
-                              src={cartIcon}
-                              alt="cart icon"
-                              width={30}
-                              height={30}
-                              className="w-16 py-1 bg-candy-green"
-                            />
-                          </>
-                        )}
+                              />
+                            </>
+                          ) : (
+                            <>
+                              <span className="self-center font-semibold">{`R$ ${size.preco},00`}</span>
+                              <Image
+                                src={cartIcon}
+                                alt="cart icon"
+                                width={30}
+                                height={30}
+                                className="w-16 py-1 bg-candy-green"
+                              />
+                            </>
+                          )}
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </label>
                 ))}
               </div>
               {errors.tamanho && touched.tamanho ? (
                 <div>{errors.tamanho}</div>
               ) : null}
-            </label>
+            </div>
             {/* // ! RECHEIOS */}
             <label>
               <ColoredTitle bgColor="green" title="Até 2 Recheios" />
