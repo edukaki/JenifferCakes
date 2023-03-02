@@ -30,7 +30,7 @@ export default function Home() {
       <main>
         <section className="flex flex-col items-center text-center gap-7 min-h-screen">
           <h1 className="text-center w-9/12 tracking-wider leading-snug">
-            Oi, eu sou a Jennifer !
+            Oi, eu sou a Jeniffer !
           </h1>
           <Image
             className="w-8/12"
