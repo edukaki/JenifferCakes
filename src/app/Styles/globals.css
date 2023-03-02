@@ -24,9 +24,6 @@
   input[type='date'] {
     @apply w-full py-2 px-2 text-dark-grey text-opacity-70 tracking-widest;
   }
-  input[type='date']::placeholder {
-    @apply text-red-400 opacity-40;
-  }
 }
 
 @layer components {
