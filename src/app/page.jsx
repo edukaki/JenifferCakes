@@ -86,7 +86,7 @@ export default function Home() {
             calligraphy
           />
           <Image src={callToAction} alt="imagem de bolo com oferta" />
-          <Button text="Encomendar" href="/cardapio" whatsapp />
+          <Button text="Ver cardápio" href="/cardapio" alternative />
         </section>
       </main>
     </>
