@@ -28,7 +28,7 @@ export default function Home() {
         </div>
       </header>
       <main>
-        <section className="flex flex-col items-center text-center gap-7 min-h-screen">
+        <section className="flex flex-col items-center text-center gap-7">
           <h1 className="text-center w-9/12 tracking-wider leading-snug">
             Oi, eu sou a Jeniffer !
           </h1>
