@@ -7,16 +7,16 @@
     @apply font-montserrat bg-light-beige text-dark-grey;
   }
   h1 {
-    @apply font-dancing-script text-4xl font-semibold md:text-[44px];
+    @apply font-dancing-script text-4xl font-semibold md:text-[44px] xl:text-5xl;
   }
   h2 {
-    @apply font-dancing-script text-4xl md:text-[44px];
+    @apply font-dancing-script text-4xl md:text-[44px] xl:text-5xl;
   }
   h3 {
-    @apply text-lg font-semibold;
+    @apply text-lg font-semibold xl:text-xl;
   }
   main {
-    @apply flex flex-col w-full pb-24;
+    @apply flex flex-col w-full pb-24 2xl:max-w-[70%] mx-auto;
   }
   label {
     @apply space-y-5;
