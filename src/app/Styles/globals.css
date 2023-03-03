@@ -7,16 +7,16 @@
     @apply font-montserrat bg-light-beige text-dark-grey;
   }
   h1 {
-    @apply font-dancing-script text-4xl font-semibold;
+    @apply font-dancing-script text-4xl font-semibold md:text-[44px];
   }
   h2 {
-    @apply font-dancing-script text-4xl;
+    @apply font-dancing-script text-4xl md:text-[44px];
   }
   h3 {
     @apply text-lg font-semibold;
   }
   main {
-    @apply flex flex-col w-full container-mobile pb-24;
+    @apply flex flex-col w-full pb-24;
   }
   label {
     @apply space-y-5;
@@ -28,7 +28,7 @@
 
 @layer components {
   .container-mobile {
-    @apply px-4;
+    @apply px-4 md:px-7;
   }
   .radioButton {
     @apply relative w-10/12 h-10 bg-white;
