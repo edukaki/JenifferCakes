@@ -31,13 +31,15 @@ export default function Carousel(props) {
       {props.arrImage.map((obj, index) => (
         <div key={index} className="flex flex-col items-center pb-12">
           <Image
-            className={`${obj.name && 'rounded-full max-w-[190px]'}`}
+            className={`${
+              obj.name && 'rounded-full max-w-[190px] md:max-w-[400px]'
+            }`}
             src={obj.img}
             alt={props.alt}
           />
           {obj.name && (
             <>
-              <span className="text-2xl font-semibold pb-10 pt-5">
+              <span className="text-2xl font-semibold pb-10 pt-5 md:text-3xl">
                 {obj.name}
               </span>
               <Quotes firstParagraph={obj.quote} />
