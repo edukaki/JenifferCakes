@@ -27,7 +27,7 @@ export default function Home() {
           />
         </div>
       </header>
-      <main>
+      <main className="space-y-24">
         <section className="flex flex-col items-center text-center gap-7">
           <h1 className="text-center w-9/12 tracking-wider leading-snug">
             Oi, eu sou a Jeniffer !
@@ -43,7 +43,7 @@ export default function Home() {
               secondParagraph="O que me dá mais satisfação é ver a alegria no rosto dos meus
               clientes."
             />
-            <div className="grid grid-cols-2 py-2 my-6 text-xl w-11/12 text-center bg-white text-red-strong">
+            <div className="grid grid-cols-2 py-2 mt-6 text-xl w-11/12 text-center bg-white text-red-strong">
               <span className="text-2xl p-4 font-semibold">
                 1000 + bolos entregues
               </span>
