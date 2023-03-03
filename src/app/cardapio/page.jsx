@@ -11,16 +11,20 @@ export default function cardapio() {
           Cardápio
         </h1>
       </header>
-      <main>
+      <main className="container-mobile">
         <FOrder />
-        <section className="grid grid-cols-2 gap-5 pt-20 pb-12 place-items-center">
-          <h3 className="text-2xl col-span-2 text-center">
+        <section className="grid grid-cols-2 gap-5 pt-20 pb-12 place-items-center md:w-7/12 md:m-auto md:gap-10">
+          <h3 className="text-2xl col-span-2 text-center md:text-3xl">
             Formas de pagamento
           </h3>
-          <Image src={pixIcon} alt="pix icon" width={40} height={40} />
-          <Image src={cashIcon} alt="cash icon" width={40} height={40} />
-          <span>pix</span>
-          <span>dinheiro</span>
+          <div className="grid grid-flow-row place-items-center gap-5">
+            <Image src={pixIcon} alt="pix icon" width={40} height={40} />
+            <span>pix</span>
+          </div>
+          <div className="grid grid-flow-row place-items-center gap-5">
+            <Image src={cashIcon} alt="cash icon" width={40} height={40} />
+            <span>dinheiro</span>
+          </div>
         </section>
         <section className="flex flex-col text-center">
           <h3 className="text-2xl col-span-2 text-center">Endereço</h3>
