@@ -113,7 +113,7 @@ export const FOrder = () => {
               <div
                 role="group"
                 aria-labelledby="tamanho-radio-group"
-                className="flex flex-col gap-12 mt-5"
+                className="grid grid-flow-row gap-12 mt-5 md:grid-cols-2"
               >
                 {arrBolos.map((size, index) => (
                   <label key={index}>
