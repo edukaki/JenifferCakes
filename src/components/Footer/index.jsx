@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="text-center mx-4">
+    <footer className="text-center container-mobile">
       <div className="bg-white">
         <h2 className="pt-5 font-montserrat text-base font-semibold">
           Entre em contato
