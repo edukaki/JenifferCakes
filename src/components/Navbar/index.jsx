@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import logo from '../../assets/images/icons/Jennifer-logo.png';
+import logo from '../../assets/images/icons/Jennifer-logo.svg';
 
 export default function Navbar() {
   const [menuHamburguer, setMenuHamburguer] = useState(false);
