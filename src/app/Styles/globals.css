@@ -16,7 +16,7 @@
     @apply text-lg font-semibold;
   }
   main {
-    @apply flex flex-col w-full gap-24 container-mobile pb-24;
+    @apply flex flex-col w-full container-mobile pb-24;
   }
   label {
     @apply space-y-5;
