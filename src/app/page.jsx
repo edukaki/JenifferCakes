@@ -107,7 +107,7 @@ export default function Home() {
           />
           <div className="flex flex-col items-center gap-12 pt-12 xl:bg-candy-green xl:w-full xl:flex-row xl:p-12 xl:justify-evenly 2xl:justify-center">
             <Image
-              className="xl:max-h-[600px] 2xl:max-w-[800px] xl:w-auto"
+              className="xl:max-h-[600px] 2xl:max-w-[800px]"
               src={
                 window.innerWidth >= 1280 ? callToActionDesktop : callToAction
               }
