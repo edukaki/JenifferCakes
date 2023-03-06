@@ -15,6 +15,9 @@
   h3 {
     @apply text-lg font-semibold xl:text-xl;
   }
+  header {
+    @apply w-full 2xl:max-w-[70%] mx-auto;
+  }
   main {
     @apply flex flex-col w-full pb-24 2xl:max-w-[70%] mx-auto;
   }
