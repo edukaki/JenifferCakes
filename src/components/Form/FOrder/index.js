@@ -92,17 +92,30 @@ export const FOrder = () => {
             sizeRef.preco +
             values.acrescimos.length * sizeRef.acrescimos +
             (values.topper && sizeRef.topper);
-          const newOrder = JSON.stringify(values)
-            .replaceAll(',"', '%0a')
-            .replaceAll(/[{}"[\]]/g, '')
-            .replaceAll(':', ': ')
-            .replace(true, 'Sim')
-            .replace(false, 'Não')
-            .replaceAll(' ', ' %20');
+          const newOrder = `Olá Jeniffer!%0a
+          Gostaria de encomendar esse bolo:%0a
+          Tamanho: ${values.tamanho}%0a
+          Recheios: ${
+            values.recheios.length > 1
+              ? `${values.recheios[0]} e ${values.recheios[1]}`
+              : values.recheios[0]
+          }%0a
+          Acrescimos: ${
+            values.acrescimos.length === 0
+              ? 'não'
+              : values.acrescimos.join(', ')
+          }%0a
+          Topper: ${values.topper ? 'sim' : 'não'}%0a
+          Entrega: ${values.entrega}%0a
+          Total: R$${total},00%0a%0a
+          Você pode confirmar o meu pedido?%0a
+          Abraços!`;
+
           window.location.replace(
-            `https://api.whatsapp.com/send?phone=819082453134&text=${
-              newOrder + `%0aTotal:%20R$${total},00`
-            }`,
+            `https://api.whatsapp.com/send?phone=5518996394369&text=${newOrder.replaceAll(
+              ' ',
+              '%20',
+            )}`,
           );
         }}
       >
