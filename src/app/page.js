@@ -19,6 +19,7 @@ import { useEffect, useState } from 'react';
 
 export default function Home() {
   const [matches, setMaches] = useState(null);
+  const [renderWindow, setRenderWindow] = useState(false);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(min-width: 1280px)');
@@ -26,6 +27,7 @@ export default function Home() {
     mediaQuery.addEventListener('change', (e) => {
       setMaches(e.matches);
     });
+    setRenderWindow(typeof window !== 'undefined');
   }, []);
 
   return (
@@ -33,24 +35,25 @@ export default function Home() {
       <header className="h-[calc(100vh-100px)] flex flex-row items-center m-auto md:px-20 md:h-full md:mt-8 mb-24">
         <div className="flex flex-col items-center m-auto relative">
           <h1 className="text-center">Bolos feitos com amor</h1>
-          <div>
-            <Carousel
-              arrImage={
-                typeof window !== 'undefined' &&
-                (matches ? objMainCarouselDesktop : objMainCarouselMobile)
-              }
-              alt="Fatia de bolo"
-            />
-          </div>
-          <div className="xl:absolute xl:bottom-1/4">
-            <Button
-              alternative
-              text="Ver cardápio"
-              href="/cardapio"
-              margin="mt-0"
-              absolute
-            />
-          </div>
+          {renderWindow && (
+            <>
+              <Carousel
+                arrImage={
+                  matches ? objMainCarouselDesktop : objMainCarouselMobile
+                }
+                alt="Fatia de bolo"
+              />
+              <div className="xl:absolute xl:bottom-1/4">
+                <Button
+                  alternative
+                  text="Ver cardápio"
+                  href="/cardapio"
+                  margin="mt-0"
+                  absolute
+                />
+              </div>
+            </>
+          )}
         </div>
       </header>
       <main className="space-y-24">
@@ -118,14 +121,16 @@ export default function Home() {
             calligraphy
           />
           <div className="flex flex-col items-center gap-12 pt-12 xl:bg-candy-green xl:w-full xl:flex-row xl:p-12 xl:justify-evenly 2xl:justify-center">
-            <Image
-              className="xl:max-h-[600px] 2xl:max-w-[800px]"
-              src={
-                typeof window !== 'undefined' &&
-                (matches ? callToActionDesktop : callToAction)
-              }
-              alt="imagem de bolo com oferta"
-            />
+            {renderWindow && (
+              <Image
+                className="xl:max-h-[600px] 2xl:max-w-[800px]"
+                src={
+                  typeof window !== 'undefined' &&
+                  (matches ? callToActionDesktop : callToAction)
+                }
+                alt="imagem de bolo com oferta"
+              />
+            )}
             <Button
               text="fazer pedido"
               href="/cardapio"
