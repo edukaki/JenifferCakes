@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Select from 'react-select';
 
 const MultiSelect = ({
@@ -61,3 +62,12 @@ const MultiSelect = ({
 };
 
 export default MultiSelect;
+
+MultiSelect.propTypes = {
+  field: PropTypes.object.isRequired,
+  form: PropTypes.object.isRequired,
+  options: PropTypes.array.isRequired,
+  isMulti: PropTypes.bool,
+  placeholder: PropTypes.string,
+  handleChange: PropTypes.func,
+};
