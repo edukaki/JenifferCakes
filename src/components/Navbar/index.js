@@ -12,7 +12,6 @@ export default function Navbar() {
   function handleScroll() {
     setNavScroll(window.scrollY > 0);
   }
-  console.log(navScroll);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
