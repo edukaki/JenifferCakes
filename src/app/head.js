@@ -14,6 +14,7 @@ export default function Head() {
       <link
         href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap"
         rel="stylesheet"
+        // eslint-disable-next-line react/no-unknown-property
         precedence="default"
       />
     </>

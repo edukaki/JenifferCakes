@@ -1,8 +1,8 @@
-import FOrder from '@/components/Form/FOrder';
-import Image from 'next/image';
+import cashIcon from '@/assets/images/icons/cash-icon.svg';
 import phoneICon from '@/assets/images/icons/phone-icon.svg';
 import pixIcon from '@/assets/images/icons/pix-icon.svg';
-import cashIcon from '@/assets/images/icons/cash-icon.svg';
+import FOrder from '@/components/Form/FOrder';
+import Image from 'next/image';
 export default function cardapio() {
   return (
     <>

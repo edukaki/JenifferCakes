@@ -1,35 +1,47 @@
 'use client';
-import Image from 'next/image';
-import Button from '@/components/Button';
-import profile from '@/assets/images/home/mobile/jeniffer-profile.png';
-import Carousel from '@/components/Carousel';
-import CardMain from '@/components/CardMain';
+import callToActionDesktop from '@/assets/images/home/desktop/call-to-action-price.jpg';
 import artisan from '@/assets/images/home/mobile/artisan.png';
+import callToAction from '@/assets/images/home/mobile/call-to-action-price.png';
+import profile from '@/assets/images/home/mobile/jeniffer-profile.png';
 import quality from '@/assets/images/home/mobile/quality.png';
-import ColoredTitle from '@/components/ColoredTitle';
-import Quotes from '@/components/Quotes';
-import { objTestimonials } from '@/assets/utils/objTestmonials';
 import {
   objMainCarouselMobile,
   objMainCarouselDesktop,
 } from '@/assets/utils/objMainCarousel';
-import callToAction from '@/assets/images/home/mobile/call-to-action-price.png';
-import callToActionDesktop from '@/assets/images/home/desktop/call-to-action-price.jpg';
+import { objTestimonials } from '@/assets/utils/objTestmonials';
+import Button from '@/components/Button';
+import CardMain from '@/components/CardMain';
+import Carousel from '@/components/Carousel';
+import ColoredTitle from '@/components/ColoredTitle';
+import Quotes from '@/components/Quotes';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const [matches, setMaches] = useState(null);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(min-width: 1280px)');
+    setMaches(mediaQuery.matches);
+    mediaQuery.addEventListener('change', (e) => {
+      setMaches(e.matches);
+    });
+  }, []);
+
   return (
     <>
       <header className="h-[calc(100vh-100px)] flex flex-row items-center m-auto md:px-20 md:h-full md:mt-8 mb-24">
         <div className="flex flex-col items-center m-auto relative">
           <h1 className="text-center">Bolos feitos com amor</h1>
-          <Carousel
-            arrImage={
-              window.innerWidth >= 1280
-                ? objMainCarouselDesktop
-                : objMainCarouselMobile
-            }
-            alt="Fatia de bolo"
-          />
+          <div>
+            <Carousel
+              arrImage={
+                typeof window !== 'undefined' &&
+                (matches ? objMainCarouselDesktop : objMainCarouselMobile)
+              }
+              alt="Fatia de bolo"
+            />
+          </div>
           <div className="xl:absolute xl:bottom-1/4">
             <Button
               alternative
@@ -109,7 +121,8 @@ export default function Home() {
             <Image
               className="xl:max-h-[600px] 2xl:max-w-[800px]"
               src={
-                window.innerWidth >= 1280 ? callToActionDesktop : callToAction
+                typeof window !== 'undefined' &&
+                (matches ? callToActionDesktop : callToAction)
               }
               alt="imagem de bolo com oferta"
             />

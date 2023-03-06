@@ -1,7 +1,7 @@
-import Image from 'next/image';
-import instagram from '@/assets/images/icons/instagram-icon.svg';
 import facebook from '@/assets/images/icons/facebook-icon.svg';
+import instagram from '@/assets/images/icons/instagram-icon.svg';
 import whatsapp from '@/assets/images/icons/whatsapp-icon.svg';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Footer() {

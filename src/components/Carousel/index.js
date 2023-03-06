@@ -1,7 +1,8 @@
-import { Carousel as ImgViewer } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import PropTypes from 'prop-types';
 import Image from 'next/image';
+import PropTypes from 'prop-types';
+import { Carousel as ImgViewer } from 'react-responsive-carousel';
+
 import Quotes from '../Quotes';
 
 export default function Carousel(props) {

@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
 import Image from 'next/image';
+import PropTypes from 'prop-types';
 
 export default function CardMain(props) {
   const color =
@@ -53,4 +53,6 @@ CardMain.propTypes = {
   subtitle: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  left: PropTypes.bool,
+  right: PropTypes.bool,
 };

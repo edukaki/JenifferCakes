@@ -27,4 +27,5 @@ Button.propTypes = {
   text: PropTypes.string.isRequired,
   href: PropTypes.string,
   whatsapp: PropTypes.bool,
+  type: PropTypes.string,
 };

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export default function OrderPanel(props) {
   const order = props.order;
   return (
@@ -54,3 +56,7 @@ export default function OrderPanel(props) {
     </section>
   );
 }
+
+OrderPanel.propTypes = {
+  order: PropTypes.object,
+};

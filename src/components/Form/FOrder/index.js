@@ -1,15 +1,16 @@
 'use client';
+import alertIcon from '@/assets/images/icons/alert-icon.svg';
+import cartIcon from '@/assets/images/icons/carticon.svg';
+import checkedIcon from '@/assets/images/icons/checked-icon.svg';
 import Button from '@/components/Button';
 import ColoredTitle from '@/components/ColoredTitle';
+import OrderPanel from '@/components/OrderPanel';
 import { Formik, Form, Field } from 'formik';
-import * as Yup from 'yup';
-import MultiSelect from '../Multiselect';
-import cartIcon from '@/assets/images/icons/carticon.svg';
 import Image from 'next/image';
 import { useState } from 'react';
-import checkedIcon from '@/assets/images/icons/checked-icon.svg';
-import alertIcon from '@/assets/images/icons/alert-icon.svg';
-import OrderPanel from '@/components/OrderPanel';
+import * as Yup from 'yup';
+
+import MultiSelect from '../Multiselect';
 
 const arrBolos = [
   { name: 'Mini', preco: 65, serves: 10, acrescimos: 10, topper: 10 },
@@ -93,7 +94,7 @@ export const FOrder = () => {
             (values.topper && sizeRef.topper);
           const newOrder = JSON.stringify(values)
             .replaceAll(',"', '%0a')
-            .replaceAll(/[{}"\[\]]/g, '')
+            .replaceAll(/[{}"[\]]/g, '')
             .replaceAll(':', ': ')
             .replace(true, 'Sim')
             .replace(false, 'Não')

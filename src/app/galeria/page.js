@@ -2,7 +2,6 @@
 import { objGallery } from '@/assets/utils/objGallery';
 import Carousel from '@/components/Carousel';
 import ColoredTitle from '@/components/ColoredTitle';
-// import Link from 'next/link';
 
 export default function galeria() {
   return (
