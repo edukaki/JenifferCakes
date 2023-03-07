@@ -200,14 +200,16 @@ export const FOrder = () => {
             {/* // ! RECHEIOS */}
             <label>
               <ColoredTitle bgColor="green" title="Até 2 Recheios" />
-              <Field
-                name="recheios"
-                component={MultiSelect}
-                isMulti={true}
-                options={arrRecheios}
-                placeholder="Selecione os recheios"
-                handleChange={handleFieldValue}
-              ></Field>
+              <div className="w-5/12 m-auto">
+                <Field
+                  name="recheios"
+                  component={MultiSelect}
+                  isMulti={true}
+                  options={arrRecheios}
+                  placeholder="Selecione os recheios"
+                  handleChange={handleFieldValue}
+                ></Field>
+              </div>
               {errors.recheios && touched.recheios ? (
                 <div>{errors.recheios}</div>
               ) : null}
@@ -215,53 +217,57 @@ export const FOrder = () => {
             {/* // ! ACRESCIMOS */}
             <label>
               <ColoredTitle bgColor="green" title="Acréscimos" />
-              <div className="grid grid-cols-1 bg-candy-green py-2 px-4 font-semibold">
-                {arrBolos.map((size, index) => (
-                  <div className="flex flex-row justify-between" key={index}>
-                    <span>{size.name}</span>
-                    <span>{`R$ ${size.acrescimos},00`}</span>
-                  </div>
-                ))}
+              <div className="space-y-5 xl:grid xl:grid-cols-2 xl:gap-24">
+                <div className="grid grid-cols-1 bg-candy-green py-2 px-4 font-semibold">
+                  {arrBolos.map((size, index) => (
+                    <div className="flex flex-row justify-between" key={index}>
+                      <span>{size.name}</span>
+                      <span>{`R$ ${size.acrescimos},00`}</span>
+                    </div>
+                  ))}
+                </div>
+                <Field
+                  instanceId="acrecimos"
+                  name="acrescimos"
+                  component={MultiSelect}
+                  isMulti={true}
+                  options={arrAcrescimos}
+                  placeholder="Selecione os acréscimos"
+                  handleChange={handleFieldValue}
+                ></Field>
+                {errors.acrescimos && touched.acrescimos ? (
+                  <div>{errors.acrescimos}</div>
+                ) : null}
               </div>
-              <Field
-                instanceId="acrecimos"
-                name="acrescimos"
-                component={MultiSelect}
-                isMulti={true}
-                options={arrAcrescimos}
-                placeholder="Selecione os acréscimos"
-                handleChange={handleFieldValue}
-              ></Field>
-              {errors.acrescimos && touched.acrescimos ? (
-                <div>{errors.acrescimos}</div>
-              ) : null}
             </label>
             {/* // ! TOPPER */}
             <label>
               <ColoredTitle bgColor="green" title="Topper" />
-              <div className="grid grid-cols-1 bg-candy-green py-2 px-4 font-semibold">
-                {arrBolos.map((size, index) => (
-                  <div className="flex flex-row justify-between" key={index}>
-                    <span>{size.name}</span>
-                    <span>{`R$ ${size.topper},00`}</span>
-                  </div>
-                ))}
+              <div className="space-y-5 xl:grid xl:grid-cols-2 xl:gap-24">
+                <div className="grid grid-cols-1 bg-candy-green py-2 px-4 font-semibold">
+                  {arrBolos.map((size, index) => (
+                    <div className="flex flex-row justify-between" key={index}>
+                      <span>{size.name}</span>
+                      <span>{`R$ ${size.topper},00`}</span>
+                    </div>
+                  ))}
+                </div>
+                <Field
+                  instanceId="topper"
+                  name="topper"
+                  component={MultiSelect}
+                  isMulti={false}
+                  options={[
+                    { value: true, label: 'Sim' },
+                    { value: false, label: 'Não' },
+                  ]}
+                  placeholder="Selecione o topper"
+                  handleChange={handleFieldValue}
+                ></Field>
+                {errors.topper && touched.topper ? (
+                  <div>{errors.topper}</div>
+                ) : null}
               </div>
-              <Field
-                instanceId="topper"
-                name="topper"
-                component={MultiSelect}
-                isMulti={false}
-                options={[
-                  { value: true, label: 'Sim' },
-                  { value: false, label: 'Não' },
-                ]}
-                placeholder="Selecione o topper"
-                handleChange={handleFieldValue}
-              ></Field>
-              {errors.topper && touched.topper ? (
-                <div>{errors.topper}</div>
-              ) : null}
             </label>
             {/* // ! ENTREGA */}
             <label>
