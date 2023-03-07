@@ -92,23 +92,23 @@ export const FOrder = () => {
             sizeRef.preco +
             values.acrescimos.length * sizeRef.acrescimos +
             (values.topper && sizeRef.topper);
-          const newOrder = `Olá Jeniffer!%0a
-          Gostaria de encomendar esse bolo:%0a
-          Tamanho: ${values.tamanho}%0a
+          const newOrder = `Olá Jeniffer!\n
+          Gostaria de encomendar esse bolo:\n
+          Tamanho: ${values.tamanho}\n
           Recheios: ${
             values.recheios.length > 1
               ? `${values.recheios[0]} e ${values.recheios[1]}`
               : values.recheios[0]
-          }%0a
+          }\n
           Acrescimos: ${
             values.acrescimos.length === 0
               ? 'não'
               : values.acrescimos.join(', ')
-          }%0a
-          Topper: ${values.topper ? 'sim' : 'não'}%0a
-          Entrega: ${values.entrega}%0a
-          Total: R$${total},00%0a%0a
-          Você pode confirmar o meu pedido?%0a
+          }\n
+          Topper: ${values.topper ? 'sim' : 'não'}\n
+          Entrega: ${values.entrega}\n
+          Total: R$${total},00\n\n
+          Você pode confirmar o meu pedido?\n
           Abraços!`;
 
           window.location.replace(
