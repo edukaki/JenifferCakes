@@ -32,7 +32,7 @@ export default function Home() {
 
   return (
     <>
-      <header className="h-[calc(100vh-100px)] flex flex-row items-center m-auto md:px-20 md:h-full md:mt-8 mb-24">
+      <header className="h-[calc(100vh-100px)] flex flex-row items-center m-auto md:px-20 md:h-full md:mt-8 mb-24 2xl:px-0">
         <div className="flex flex-col items-center m-auto relative">
           <h1 className="text-center">Bolos feitos com amor</h1>
           {renderWindow && (
@@ -76,16 +76,18 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <div className="grid grid-cols-2 py-2 mt-6 w-11/12 m-auto text-center text-2xl font-semibold md:py-8 md:text-3xl bg-white text-red-strong md:w-full">
-          <span className="p-4 ">
-            1000 +<br />
-            bolos entregues
-          </span>
-          <span className="p-4">
-            500 +<br />
-            clientes felizes
-          </span>
-        </div>
+        <section className="w-full container-mobile xl:m-auto">
+          <div className="grid grid-cols-2 py-2 mt-6 w-11/12 m-auto text-center text-2xl font-semibold md:py-8 md:text-3xl bg-white text-red-strong md:w-full">
+            <span className="p-4 ">
+              1000 +<br />
+              bolos entregues
+            </span>
+            <span className="p-4">
+              500 +<br />
+              clientes felizes
+            </span>
+          </div>
+        </section>
         <section className="grid grid-rows-2 gap-24 container-mobile md:grid-rows-1 md:grid-cols-2 md:gap-2 xl:grid-cols-1">
           <CardMain
             title="Artesanal"
