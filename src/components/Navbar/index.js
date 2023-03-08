@@ -1,20 +1,21 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 import logo from '../../assets/images/icons/Jennifer-logo.svg';
 
 const links = [
   { href: '/', text: 'Home' },
-  { href: '/cardapio', text: 'Cardápio' },
   { href: '/galeria', text: 'Galeria' },
-  { href: '/contato', text: 'Contato' },
+  { href: '/cardapio', text: 'Cardápio' },
 ];
 
 export default function Navbar() {
   const [menuHamburguer, setMenuHamburguer] = useState(false);
   const [navScroll, setNavScroll] = useState(false);
+  const pathname = usePathname();
 
   function handleScroll() {
     setNavScroll(window.scrollY > 0);
@@ -38,12 +39,22 @@ export default function Navbar() {
         <ul
           className={`${
             menuHamburguer ? '' : 'hidden'
-          } absolute top-full right-0 space-y-8 py-10 w-full bg-white text-center z-50 xl:relative xl:flex xl:flex-row xl:items-center xl:gap-24 xl:text-xl xl:space-y-0 xl:py-0 xl:w-auto xl:justify-center`}
+          } absolute top-full right-0 py-10 w-full bg-white text-center z-50 xl:relative xl:flex xl:flex-row xl:items-center xl:text-xl xl:space-y-0 xl:py-0 xl:w-auto xl:justify-center`}
         >
           {links.map(({ href, text }, index) => (
             <li key={index}>
-              <Link href={href} onClick={() => setMenuHamburguer(false)}>
-                {text}
+              <Link
+                href={href}
+                className={`px-12 py-12 hover:bg-black hover:bg-opacity-20 transition-colors ease-in-out duration-300`}
+                onClick={() => setMenuHamburguer(false)}
+              >
+                <span
+                  className={`${
+                    pathname === href && 'pb-2 border-b-4 border-b-candy-pink'
+                  }`}
+                >
+                  {text}
+                </span>
               </Link>
             </li>
           ))}
