@@ -5,6 +5,13 @@ import { useEffect, useState } from 'react';
 
 import logo from '../../assets/images/icons/Jennifer-logo.svg';
 
+const links = [
+  { href: '/', text: 'Home' },
+  { href: '/cardapio', text: 'Cardápio' },
+  { href: '/galeria', text: 'Galeria' },
+  { href: '/contato', text: 'Contato' },
+];
+
 export default function Navbar() {
   const [menuHamburguer, setMenuHamburguer] = useState(false);
   const [navScroll, setNavScroll] = useState(false);
@@ -33,21 +40,13 @@ export default function Navbar() {
             menuHamburguer ? '' : 'hidden'
           } absolute top-full right-0 space-y-8 py-10 w-full bg-white text-center z-50 xl:relative xl:flex xl:flex-row xl:items-center xl:gap-24 xl:text-xl xl:space-y-0 xl:py-0 xl:w-auto xl:justify-center`}
         >
-          <li>
-            <Link href="/" onClick={() => setMenuHamburguer(false)}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link href="/galeria" onClick={() => setMenuHamburguer(false)}>
-              Galeria
-            </Link>
-          </li>
-          <li>
-            <Link href="/cardapio" onClick={() => setMenuHamburguer(false)}>
-              Cardápio
-            </Link>
-          </li>
+          {links.map(({ href, text }, index) => (
+            <li key={index}>
+              <Link href={href} onClick={() => setMenuHamburguer(false)}>
+                {text}
+              </Link>
+            </li>
+          ))}
         </ul>
         <button
           className="xl:hidden"
