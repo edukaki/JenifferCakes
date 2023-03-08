@@ -3,7 +3,7 @@ import { objGallery } from '@/assets/utils/objGallery';
 import Carousel from '@/components/Carousel';
 import ColoredTitle from '@/components/ColoredTitle';
 
-export default function galeria() {
+export default function Galeria() {
   return (
     <>
       <header>

@@ -3,7 +3,7 @@ import phoneICon from '@/assets/images/icons/phone-icon.svg';
 import pixIcon from '@/assets/images/icons/pix-icon.svg';
 import FOrder from '@/components/Form/FOrder';
 import Image from 'next/image';
-export default function cardapio() {
+export default function Cardapio() {
   return (
     <>
       <header>
