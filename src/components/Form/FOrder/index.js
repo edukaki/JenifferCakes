@@ -200,7 +200,7 @@ export const FOrder = () => {
             {/* // ! RECHEIOS */}
             <label>
               <ColoredTitle bgColor="green" title="Até 2 Recheios" />
-              <div className="w-5/12 m-auto">
+              <div className="xl:w-5/12 xl:m-auto">
                 <Field
                   name="recheios"
                   component={MultiSelect}
