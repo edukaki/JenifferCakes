@@ -14,24 +14,30 @@ export default function Galeria() {
       <main>
         <section className="flex flex-col items-center text-center gap-7">
           <ColoredTitle bgColor="green" title="Aniversário Infantil" />
-          <Carousel arrImage={objGallery[0].infantil} alt="Bolo infantil" />
+          <div className="max-w-2xl">
+            <Carousel arrImage={objGallery[0].infantil} alt="Bolo infantil" />
+          </div>
           {/* <Link href="/galeria/infantil" className=" text-lg -mt-10 underline">
             ver mais
           </Link> */}
         </section>
         <section className="flex flex-col items-center text-center gap-7">
           <ColoredTitle bgColor="green" title="Aniversário e Celebrações" />
-          <Carousel
-            arrImage={objGallery[0].celebracoes}
-            alt="Bolo de Celebrações"
-          />
+          <div className="max-w-2xl">
+            <Carousel
+              arrImage={objGallery[0].celebracoes}
+              alt="Bolo de Celebrações"
+            />
+          </div>
         </section>
         <section className="flex flex-col items-center text-center gap-7">
           <ColoredTitle bgColor="green" title="Casamento e Bodas" />
-          <Carousel
-            arrImage={objGallery[0].casamento}
-            alt="Bolo de casamento"
-          />
+          <div className="max-w-2xl">
+            <Carousel
+              arrImage={objGallery[0].casamento}
+              alt="Bolo de casamento"
+            />
+          </div>
         </section>
       </main>
     </>
